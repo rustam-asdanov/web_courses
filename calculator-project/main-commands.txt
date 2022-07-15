@@ -1,0 +1,5 @@
+for creating node project = npm init
+for running the server via node = node server.js
+for downloading repositories = npm install body-parser, npm install express
+
+
