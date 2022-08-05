@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("header.ejs") -%>
+  <body>
+    <h1>Today is <%= day %></h1>
+    <h2>Page: <%= taskType %></h2>
+    <h2>
+      <a href="/work">Task</a>
+    </h2>
+    <div class="main">
+      <div>
+        <% for( let index = 0; index < taskArray.length; index++ ) { %>
+        <input type="checkbox" onclick="checkOn(this)" />
+        <span><%= index %> : <%= taskArray[index] %></span>
+        <br />
+        <% } %>
+      </div>
+      <form action="/addTask" method="post">
+        <input type="text" name="task" placeholder="input" autofocus required />
+        <button type="submit" name="button" value="<%= taskType %>">Add</button>
+      </form>
+    </div>
+    <script>
+      function checkOn(elem) {
+        elem.nextElementSibling.classList.toggle("crossElement");
+      }
+    </script>
+  </body>
+  <%- include("footer.ejs") -%>
+</html>
